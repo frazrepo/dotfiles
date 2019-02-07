@@ -43,6 +43,12 @@
             "commands": [
                 "workbench.action.showCommands",
             ]
+        },
+        {
+            "before": ["Z", "Z"],
+            "commands": [
+                ":wq"
+            ]
         }
     ],
    "vim.visualModeKeyBindingsNonRecursive": [
