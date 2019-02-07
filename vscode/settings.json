@@ -39,7 +39,7 @@
             ]
         },
         {
-            "before": [":"],
+            "before": ["!"],
             "commands": [
                 "workbench.action.showCommands",
             ]
