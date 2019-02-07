@@ -3,6 +3,7 @@
     // Begin VsCodeVim Options
     "vim.leader": " ",
     "vim.hlsearch": true,
+    "vim.incsearch": true,
     "vim.sneak": true,
     "vim.easymotion": true,
      "vim.useSystemClipboard": true,
@@ -35,6 +36,12 @@
             "before": ["<leader>", "b"],
             "commands": [
                 "bookmarks.list"
+            ]
+        },
+        {
+            "before": [":"],
+            "commands": [
+                "workbench.action.showCommands",
             ]
         }
     ],
