@@ -24,11 +24,15 @@ map <Space>tt :vsc ReSharper.ReSharper_ShowUnitTestSessions<CR>
 map <Space>/ :vsc ReSharper.ReSharper_LineComment<CR>
 map <Space>qk :vsc Tools.CustomizeKeyboard<CR>
 map <Space>b :vsc Build.BuildSolution<CR>
-map <Space><Space> :vsc Tools.InvokeAceJumpCommand<CR>
 map <Space>; A;<Esc>
 map ] :vsc ReSharper.ReSharper_GotoNextMethod<CR>
 map [ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
 map zl :so ~/.vsvimrc<CR>
+
+
+" Toogle hlsearch
+map <Space><Space> :nohl<CR>
+
 
 " testing and debugging
 " nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
