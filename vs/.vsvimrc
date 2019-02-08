@@ -1,5 +1,6 @@
 set ignorecase
 set clipboard=unnamed
+set hlsearch
 let mapleader="<space>"
 " https://github.com/keithn/vsvimguide
 map gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
