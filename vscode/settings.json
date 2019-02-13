@@ -1,4 +1,6 @@
 {
+   // Various
+    "editor.lineNumbers": "relative,
   
     // Begin VsCodeVim Options
     "vim.leader": " ",
