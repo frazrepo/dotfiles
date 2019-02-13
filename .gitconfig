@@ -1,0 +1,46 @@
+[alias]
+      
+      # Push to origin
+    	pom = push origin master
+      
+      # Git status
+      s = status -s
+      
+      # Hard reset
+      hreset = reset --hard
+      
+      # Undo commit
+      undocommit = reset HEAD~
+      
+      # Commit all changes
+      ca = !git add -A && git commit -av
+  
+      # Show verbose output about tags, branches or remotes
+      tags = tag -l
+      branches = branch -a
+      remotes = remote -v      
+   
+[color]
+	ui = auto
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+    newMoved = cyan
+    oldMoved = blue
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
