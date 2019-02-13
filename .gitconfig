@@ -4,7 +4,7 @@
     	pom = push origin master
       
       # Git status
-      s = status -s
+      s = status
       
       # Hard reset
       hreset = reset --hard
