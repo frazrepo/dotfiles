@@ -61,6 +61,10 @@
             "commands": [
                 ":wq"
             ]
+        },
+        {
+            "before": ["Y"],
+            "after": ["y", "$"]
         }
     ],
    "vim.visualModeKeyBindingsNonRecursive": [
