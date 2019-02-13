@@ -56,16 +56,23 @@
                 "workbench.action.showCommands",
             ]
         },
+        // Save anq Close
         {
             "before": ["Z", "Z"],
             "commands": [
                 ":wq"
             ]
         },
+        // Yank till the end of line
         {
             "before": ["Y"],
             "after": ["y", "$"]
-        }
+        },
+        // Search
+        {
+            "before": ["<space>"],
+            "after": ["/"]
+        }       
     ],
    "vim.visualModeKeyBindingsNonRecursive": [
         {
