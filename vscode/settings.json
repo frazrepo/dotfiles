@@ -13,6 +13,16 @@
         "<C-a>": false,
         "<C-f>": false
     },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],  
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before":["<leader>", "<leader>"],
