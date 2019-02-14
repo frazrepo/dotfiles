@@ -1,0 +1,57 @@
+" Disable nohl
+map <Space><Space> :noh<CR>
+
+" VS Integration
+map gi :vsc Edit.GoToImplementation<CR>
+map <Space>b :vsc Build.BuildSolution<CR>
+
+" Resharper Integration
+map gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
+map <Space>r :vsc ReSharper.ReSharper_Rename<CR>
+map <Space>f :vsc ReSharper.ReSharper_GotoFileMember<CR>
+map <Space>u :vsc ReSharper.ReSharper_GotoUsage<CR>
+map <Space>d :vsc ReSharper.ReSharper_DuplicateText<CR>
+map <Space>, :vsc ReSharper.ReSharper_GotoText<CR>
+map <Space>v :vsc ReSharper.Resharper_IntroVariable<CR>
+map <Space>m :vsc ReSharper.ReSharper_ExtractMethod<CR>
+map <Space>t :vsc ReSharper.ReSharper_GotoType<CR>
+map <Space>/ :vsc ReSharper.ReSharper_LineComment<CR>
+map ] :vsc ReSharper.ReSharper_GotoNextMethod<CR>
+map [ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
+
+" Use CTRL-Q to do what CTRL-V used to do
+noremap <C-q>		<C-v>
+
+"Copy/Pase
+vnoremap <C-c> "+y
+
+map <C-v>		"+gP
+imap <C-v>		<Esc>"+gpa
+cmap <C-v>		<C-R>+
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-s>		:update<CR>
+noremap <Space>w    :w!<CR>
+vnoremap <C-s>		<C-C>:update<CR>
+inoremap <C-s>		<C-O>:update<CR>
+
+" CTRL-Z is Undo; not in cmdline though
+noremap <C-z> u
+inoremap <C-z> <C-o>u
+
+"Quick Edit"
+map <Space>; A;<Esc>
+
+" Alternative ESC
+inoremap jj <Esc>
+vnoremap jk <Esc>
+inoremap jk <Esc>
+vnoremap kj <Esc>
+inoremap kj <Esc>
+
+"Search
+map <Space> /
+map <C-Space> ?
+
+"Y to y$
+nnoremap Y y$
