@@ -1,3 +1,6 @@
+" Colors Settings
+" To change search highlight color go to Tools|Options|Fonts&Colors in Visual Studio and Update ViEmu HLSearch Adornment property
+
 " Disable nohl
 map <Space><Space> :noh<CR>
 
