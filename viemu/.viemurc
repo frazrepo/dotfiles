@@ -49,9 +49,6 @@ inoremap jk <Esc>
 vnoremap kj <Esc>
 inoremap kj <Esc>
 
-"Search
-map <Space> /
-map <C-Space> ?
 
 "Y to y$
 nnoremap Y y$
