@@ -33,6 +33,10 @@
             ]
         },
         {
+            "before":["<leader>", ";"],
+            "after": ["A", ";", "<Esc>"]
+        },       
+        {
             "before": ["<leader>", "w"],
             "commands": [
                 "workbench.action.files.save",
