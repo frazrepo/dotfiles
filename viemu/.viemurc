@@ -55,3 +55,9 @@ inoremap kj <Esc>
 
 "Y to y$
 nnoremap Y y$
+
+"Indenting"
+vnoremap > >gv
+vnoremap < <gv
+vmap <TAB> >gv
+vmap <S-TAB> <gv
