@@ -34,6 +34,9 @@ map zl :so ~/.vsvimrc<CR>
 " Toogle hlsearch
 map <Space><Space> :nohl<CR>
 
+"Quick Edit"
+map <Space>; A;<Esc>
+
 
 " testing and debugging
 " nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
