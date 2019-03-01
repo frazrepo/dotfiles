@@ -35,7 +35,25 @@
         {
             "before":["<leader>", ";"],
             "after": ["A", ";", "<Esc>"]
-        },       
+        }, 
+        //Quick paste hack
+        {
+            "before":["\"", "p"],
+            "after": ["v", "i", "\"", "p"]
+        }, 
+        {
+            "before":["'", "p"],
+            "after": ["v", "i", "'", "p"]
+        }, 
+        {
+            "before":["(", "p"],
+            "after": ["v", "i", "(", "p"]
+        }, 
+        {
+            "before":[")", "p"],
+            "after": ["v", "i", ")", "p"],
+        }, 
+        //Workbench vscode mapping
         {
             "before": ["<leader>", "w"],
             "commands": [
