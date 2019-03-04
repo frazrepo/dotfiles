@@ -43,14 +43,23 @@ noremap <C-z> u
 inoremap <C-z> <C-o>u
 
 "Quick Edit"
-map <Space>; A;<Esc>
+map ,; A;<Esc>
+map ,: A;<Esc>
+
+"Quick tips in insert mode"
+inoremap II <ESC>I
+inoremap AA <ESC>A
+inoremap OO <ESC>O
+inoremap CC <ESC>C
+inoremap SS <ESC>S
+inoremap DD <ESC>dd
+inoremap UU <ESC>
 
 " Alternative ESC
 inoremap jj <Esc>
-vnoremap jk <Esc>
 inoremap jk <Esc>
-vnoremap kj <Esc>
-inoremap kj <Esc>
+
+vnoremap jk <Esc>
 
 
 "Y to y$
