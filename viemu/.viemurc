@@ -44,7 +44,7 @@ inoremap <C-z> <C-o>u
 
 "Quick Edit"
 map ,; A;<Esc>
-map ,: A;<Esc>
+map ,: A:<Esc>
 
 "Quick tips in insert mode"
 inoremap II <ESC>I
