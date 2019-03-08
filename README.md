@@ -1,6 +1,7 @@
 # Installation
 ## tmux
-Copy .tmux.conf and .tmux.conf.local to home directory
+* Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+* Copy .tmux.conf and .tmux.conf.local to home directory
 
 
 
