@@ -36,6 +36,10 @@
             "before":["<leader>", ";"],
             "after": ["A", ";", "<Esc>"]
         }, 
+        {
+            "before":["<leader>"],
+            "after": ["/"]
+        }, 
         //Quick paste hack
         {
             "before":["\"", "p"],
