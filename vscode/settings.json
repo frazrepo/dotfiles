@@ -94,11 +94,6 @@
             "before": ["Y"],
             "after": ["y", "$"]
         },
-        // Search
-        {
-            "before": ["<space>"],
-            "after": ["/"]
-        }       
     ],
    "vim.visualModeKeyBindingsNonRecursive": [
         {
