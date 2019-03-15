@@ -53,6 +53,11 @@ vnoremap jk <Esc>
 "Y to y$
 nnoremap Y y$
 
+"Start/End of line navigation to stay on home row
+map H ^
+map L $
+
+
 "Indenting"
 vnoremap > >gv
 vnoremap < <gv
