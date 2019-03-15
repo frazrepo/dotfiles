@@ -33,12 +33,16 @@
             ]
         },
         {
+            "before":["L"],
+            "after": ["$"]
+        },
+        {
+            "before":["H"],
+            "after": ["^"]
+        },       
+        {
             "before":["<leader>", ";"],
             "after": ["A", ";", "<Esc>"]
-        }, 
-        {
-            "before":["<leader>"],
-            "after": ["/"]
         }, 
         //Quick paste hack
         {
