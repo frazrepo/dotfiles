@@ -44,7 +44,6 @@ inoremap <C-z> <C-o>u
 
 
 " Alternative ESC
-inoremap jj <Esc>
 inoremap jk <Esc>
 
 vnoremap jk <Esc>
