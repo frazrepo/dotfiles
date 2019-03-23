@@ -39,12 +39,17 @@
         {
             "before":["H"],
             "after": ["^"]
-        },       
+        },
+        //Azerty optimizations
         {
-            "before":["<leader>", ";"],
-            "after": ["A", ";", "<Esc>"]
+            "before":["µ"],
+            "after": ["#"],
         }, 
-        //Quick paste hack
+        {
+            "before":["²"],
+            "after": ["."],
+        },
+         //Quick paste hack
         {
             "before":["\"", "p"],
             "after": ["v", "i", "\"", "p"]
