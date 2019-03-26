@@ -32,14 +32,6 @@
                 ":nohl",
             ]
         },
-        {
-            "before":["L"],
-            "after": ["$"]
-        },
-        {
-            "before":["H"],
-            "after": ["^"]
-        },
         //Azerty optimizations
         {
             "before":["µ"],
