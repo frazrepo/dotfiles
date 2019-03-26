@@ -46,9 +46,6 @@ inoremap <C-z> <C-o>u
 " Alternative ESC
 inoremap jk <Esc>
 
-vnoremap jk <Esc>
-
-
 "Y to y$
 nnoremap Y y$
 
