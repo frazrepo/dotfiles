@@ -54,6 +54,7 @@ vnoremap <S-Del> "+x
 " CTRL-C and CTRL-Insert are Copy
 vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
+nnoremap <Space>y "+y
 
 " CTRL-V and SHIFT-Insert are Paste
 map <C-V>		"+gP
@@ -66,6 +67,10 @@ cmap <S-Insert>		<C-R>+
 
 imap <S-Insert>		<C-V>
 vmap <S-Insert>		<C-V>
+
+"Home row begin/end
+map H ^
+map L $ 
 
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-Q>		<C-V>
