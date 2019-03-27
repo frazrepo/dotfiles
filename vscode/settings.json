@@ -41,6 +41,15 @@
             "before":["²"],
             "after": ["."],
         },
+       // Home row Begin/End
+           {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
          //Quick paste hack
         {
             "before":["\"", "p"],
