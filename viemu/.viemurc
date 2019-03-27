@@ -27,6 +27,7 @@ noremap <C-q>		<C-v>
 
 "Copy/Pase
 vnoremap <C-c> "+y
+nnoremap <Space>y "+y
 
 map <C-v>		"+gP
 imap <C-v>		<Esc>"+gpa
@@ -42,6 +43,9 @@ inoremap <C-s>		<C-O>:update<CR>
 noremap <C-z> u
 inoremap <C-z> <C-o>u
 
+" Homerow begin/end
+map H ^
+map L $
 
 " Alternative ESC
 inoremap jk <Esc>
