@@ -5,7 +5,7 @@
 ## vim and neovim
 * Find instructions here [https://github.com/frazrepo/vimrc](https://github.com/frazrepo/vimrc)
 ## zsh
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/]
+* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/)
 
 # Credits
 * [tmux](https://github.com/gpakosz/.tmux)
