@@ -27,7 +27,7 @@ noremap <C-q>		<C-v>
 
 "Copy/Pase
 vnoremap <C-c> "+y
-nnoremap <Space>y "+y
+nnoremap <Space>y "*y
 
 map <C-v>		"+gP
 imap <C-v>		<Esc>"+gpa
@@ -42,6 +42,16 @@ inoremap <C-s>		<C-O>:update<CR>
 " CTRL-Z is Undo; not in cmdline though
 noremap <C-z> u
 inoremap <C-z> <C-o>u
+
+"Map some keys for azerty keyboard
+map µ # 
+map ² . 
+
+map H ^
+map L $
+
+"Missing from viemu"
+nnoremap g_ $
 
 " Homerow begin/end
 map H ^
@@ -58,3 +68,6 @@ vnoremap > >gv
 vnoremap < <gv
 vmap <TAB> >gv
 vmap <S-TAB> <gv
+
+" Put a space before pasting
+nnoremap <space>p a<space><esc>
