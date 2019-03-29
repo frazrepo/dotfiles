@@ -131,6 +131,18 @@
                 "editor.action.outdentLines"
             ]
         },
+        // Do not override default register when pasting in visual mode
+        {
+            "before": [
+                "p",
+            ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y"
+            ]
+        }
     ]
     // End VsCodeVim Options
 }
