@@ -28,6 +28,7 @@ noremap <C-q>		<C-v>
 "Copy/Pase
 vnoremap <C-c> "+y
 nnoremap <Space>y "*y
+nnoremap <space>p "*p
 
 map <C-v>		"+gP
 imap <C-v>		<Esc>"+gpa
@@ -68,6 +69,3 @@ vnoremap > >gv
 vnoremap < <gv
 vmap <TAB> >gv
 vmap <S-TAB> <gv
-
-" Put a space before pasting
-nnoremap <space>p a<space><esc>
