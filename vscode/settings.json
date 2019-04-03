@@ -113,6 +113,15 @@
             "before": ["Y"],
             "after": ["y", "$"]
         },
+         // Copy /Paste using system register
+        {
+            "before": ["<leader>","y"],
+            "after": ["\"","+", "y"]
+        },
+        {
+            "before": ["<leader>","p"],
+            "after": ["\"","+", "p"]
+        }       
     ],
    "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -130,15 +139,6 @@
             "commands": [
                 "editor.action.outdentLines"
             ]
-        },
-         // Copy /Paste using system register
-        {
-            "before": ["<leader>","y"],
-            "after": ["\"","+", "y"]
-        },
-        {
-            "before": ["<leader>","p"],
-            "after": ["\"","+", "p"]
         },
         // Yank using system register
         {
