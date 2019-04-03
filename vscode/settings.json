@@ -131,6 +131,15 @@
                 "editor.action.outdentLines"
             ]
         },
+         // Copy /Paste using system register
+        {
+            "before": ["<leader>","y"],
+            "after": ["\"","+", "y"]
+        },
+        {
+            "before": ["<leader>","p"],
+            "after": ["\"","+", "p"]
+        },      
         // Do not override default register when pasting in visual mode
         {
             "before": [
