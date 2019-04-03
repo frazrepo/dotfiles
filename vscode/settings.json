@@ -139,7 +139,12 @@
         {
             "before": ["<leader>","p"],
             "after": ["\"","+", "p"]
-        },      
+        },
+        // Yank using system register
+        {
+            "before": ["<leader>","y"],
+            "after": ["\"","+", "y"]
+        }
         // Do not override default register when pasting in visual mode
         {
             "before": [
