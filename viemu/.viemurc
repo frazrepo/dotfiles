@@ -25,15 +25,6 @@ map [ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-q>		<C-v>
 
-"Copy/Pase
-vnoremap <C-c> "+y
-nnoremap <Space>y "*y
-nnoremap <space>p "*p
-
-map <C-v>		"+gP
-imap <C-v>		<Esc>"+gpa
-cmap <C-v>		<C-R>+
-
 " Use CTRL-S for saving, also in Insert mode
 noremap <C-s>		:update<CR>
 noremap <Space>w    :w!<CR>
