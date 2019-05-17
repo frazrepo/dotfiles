@@ -153,7 +153,12 @@
                 "v",
                 "y"
             ]
-        }
+        },
+         // Paste using yank register
+        {
+            "before": ["<leader>","p"],
+            "after": ["\"","0", "p"]
+        }       
     ]
     // End VsCodeVim Options
 }
