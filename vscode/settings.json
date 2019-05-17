@@ -7,10 +7,16 @@
     "vim.hlsearch": true,
     "vim.incsearch": true,
     "vim.sneak": true,
-    "vim.easymotion": true,
-     "vim.useSystemClipboard": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,   
+    "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
-
+    "vim.enableNeovim": true,
+   // Update nvim path if On Windows
+    "vim.neovimPath": "/usr/bin/nvim",   
+    "vim.highlightedyank.enable": true,
+    "vim.substituteGlobalFlag": true,
+    "vim.visualstar": true,
+   
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false
@@ -113,14 +119,10 @@
             "before": ["Y"],
             "after": ["y", "$"]
         },
-         // Copy /Paste using system register
-        {
-            "before": ["<leader>","y"],
-            "after": ["\"","+", "y"]
-        },
+         // Paste using yank register
         {
             "before": ["<leader>","p"],
-            "after": ["\"","+", "p"]
+            "after": ["\"","0", "p"]
         }       
     ],
    "vim.visualModeKeyBindingsNonRecursive": [
