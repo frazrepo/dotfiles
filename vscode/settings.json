@@ -23,10 +23,6 @@
     },
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    },
-    {
       "before": ["j", "k"],
       "after": ["<Esc>"]
     }
@@ -123,7 +119,16 @@
         {
             "before": ["<leader>","p"],
             "after": ["\"","0", "p"]
-        }       
+        },
+       // Quick Motions
+       {
+         "before": ["<C-j>"],
+         "after": ["5", "j"]
+       },
+       {
+         "before": ["<C-k>"],
+         "after": ["5", "k"]
+       },     
     ],
    "vim.visualModeKeyBindingsNonRecursive": [
         {
