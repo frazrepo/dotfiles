@@ -19,6 +19,7 @@ map <Space>v :vsc ReSharper.Resharper_IntroVariable<CR>
 map <Space>m :vsc ReSharper.ReSharper_ExtractMethod<CR>
 map <Space>t :vsc ReSharper.ReSharper_GotoType<CR>
 map <Space>/ :vsc ReSharper.ReSharper_LineComment<CR>
+map gcc :vsc ReSharper.ReSharper_LineComment<CR>
 map ] :vsc ReSharper.ReSharper_GotoNextMethod<CR>
 map [ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
 
