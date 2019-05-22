@@ -18,7 +18,6 @@
     "vim.visualstar": true,
    
     "vim.handleKeys": {
-        "<C-a>": false,
         "<C-f>": false
     },
   "vim.insertModeKeyBindings": [
