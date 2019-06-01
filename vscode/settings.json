@@ -42,6 +42,11 @@
             "before":["²"],
             "after": ["."],
         },
+       // Last jump position (really useful
+        {
+            "before":["ù","ù"],
+            "after": ["`","`"],
+        }, 
        // Home row Begin/End
        {
          "before": ["H"],
