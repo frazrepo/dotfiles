@@ -24,6 +24,14 @@
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-a>"],
+      "after": ["<Esc>", "I"]
+    },
+    {
+      "before": ["<C-e>"],
+      "after": ["<Esc>", "A"]
     }
   ],  
     "vim.normalModeKeyBindingsNonRecursive": [
