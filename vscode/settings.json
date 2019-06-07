@@ -27,12 +27,16 @@
     },
     {
       "before": ["<C-a>"],
-      "after": ["<Esc>", "I"]
+      "commands": [
+          "cursorHome"
+      ]
     },
     {
       "before": ["<C-e>"],
-      "after": ["<Esc>", "A"]
-    }
+       "commands": [
+          "cursorEnd"
+      ]
+    },
   ],  
     "vim.normalModeKeyBindingsNonRecursive": [
         {
