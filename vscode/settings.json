@@ -25,18 +25,6 @@
       "before": ["j", "k"],
       "after": ["<Esc>"]
     },
-    {
-      "before": ["<C-a>"],
-      "commands": [
-          "cursorHome"
-      ]
-    },
-    {
-      "before": ["<C-e>"],
-       "commands": [
-          "cursorEnd"
-      ]
-    },
   ],  
     "vim.normalModeKeyBindingsNonRecursive": [
         {
