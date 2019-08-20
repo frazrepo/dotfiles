@@ -16,6 +16,7 @@
     "vim.highlightedyank.enable": true,
     "vim.substituteGlobalFlag": true,
     "vim.visualstar": true,
+    "vim.replaceWithRegister": true,
    
     "vim.handleKeys": {
         "<C-f>": false
@@ -77,10 +78,6 @@
         {
             "before":["(", "p"],
             "after": ["v", "i", "(", "p"]
-        }, 
-        {
-            "before":[")", "p"],
-            "after": ["v", "i", ")", "p"],
         }, 
         //Workbench vscode mapping
         {
