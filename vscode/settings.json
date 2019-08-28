@@ -124,11 +124,11 @@
        // Quick Motions
        {
          "before": ["<C-j>"],
-         "after": ["5", "j"]
+         "after": ["}"]
        },
        {
          "before": ["<C-k>"],
-         "after": ["5", "k"]
+         "after": ["{"]
        },     
     ],
    "vim.visualModeKeyBindingsNonRecursive": [
