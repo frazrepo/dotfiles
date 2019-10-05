@@ -1,7 +1,13 @@
 # Installation
 ## tmux
 * Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+```
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
 * Copy .tmux.conf and .tmux.conf.local to home directory
+```
+$ wget https://raw.githubusercontent.com/frazrepo/dotfiles/master/.tmux.conf && wget https://raw.githubusercontent.com/frazrepo/dotfiles/master/.tmux.conf.local
+```
 ## vim and neovim
 * Find instructions here [https://github.com/frazrepo/vimrc](https://github.com/frazrepo/vimrc)
 ## zsh
