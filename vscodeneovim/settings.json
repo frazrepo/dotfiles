@@ -1,0 +1,10 @@
+{
+   // Various
+    "editor.lineNumbers": "relative",
+  
+    // VsCodeVim Options
+    "vscode-neovim.neovimPath": "C:\\Tools\\Neovim\\Neovim\\bin\\nvim.exe",
+    "editor.fontSize": 18,
+    "editor.scrollBeyondLastLine": false
+    // End VsCodeVim Options
+}
