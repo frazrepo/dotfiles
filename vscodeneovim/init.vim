@@ -90,6 +90,7 @@ if exists('g:vscode')
     " plugin via vim-plug
     call plug#begin()
         Plug 'tpope/vim-surround'
+        Plug 'wellle/targets.vim'
     call plug#end()
 
 endif
