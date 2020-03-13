@@ -87,4 +87,9 @@ if exists('g:vscode')
 	omap gc  <Plug>VSCodeCommentary
 	nmap gcc <Plug>VSCodeCommentaryLine
 
+    " plugin via vim-plug
+    call plug#begin()
+        Plug 'tpope/vim-surround'
+    call plug#end()
+
 endif
