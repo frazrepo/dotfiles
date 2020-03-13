@@ -91,6 +91,8 @@ if exists('g:vscode')
     call plug#begin()
         Plug 'tpope/vim-surround'
         Plug 'wellle/targets.vim'
+        Plug 'tommcdo/vim-exchange'
+        Plug 'vim-scripts/ReplaceWithRegister'
     call plug#end()
 
 endif
