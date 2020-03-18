@@ -1,4 +1,7 @@
 if exists('g:vscode')
+    " Default to system clipboard
+    set clipboard^=unnamed,unnamedplus 
+
     " Space as a Leader key
     let mapleader = "\<Space>" 
 
@@ -93,6 +96,7 @@ if exists('g:vscode')
         Plug 'wellle/targets.vim'
         Plug 'tommcdo/vim-exchange'
         Plug 'vim-scripts/ReplaceWithRegister'
+        Plug 'tpope/vim-abolish'
     call plug#end()
 
 endif
