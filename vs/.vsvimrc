@@ -1,9 +1,8 @@
-set ignorecase
 set clipboard=unnamed
-set hlsearch
-let mapleader="<space>"
 
 " https://github.com/keithn/vsvimguide
+" Raccourcis clavier Visual Studio
+"https://docs.microsoft.com/fr-fr/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019
 
 " vsc commands
 map <Space>qk :vsc Tools.CustomizeKeyboard<CR>
@@ -14,10 +13,8 @@ map <Space>b :vsc Build.BuildSolution<CR>
 nnoremap gcc :vsc Edit.ToggleComment<CR>
 vnoremap gc :vsc Edit.ToggleComment<CR><Esc><Esc>
 map gi :vsc Edit.GoToImplementation<CR>
-
-" Testing and debugging
-" nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
-" nnoremap <leader>bb :vsc Debug.Windows.Breakpoints<cr>
+map <Space>r :vsc Refactor.Rename<CR>
+map <Space>m :vsc Refactor.ExtractMethod<CR>
 
 " Navigation
 nmap <C-O> :vsc View.NavigateBackward<CR>
@@ -34,6 +31,8 @@ map H ^
 map L $ 
 map ² .
 inoremap jk <Esc>
+nnoremap c* *Ncgn
+nnoremap Y y$
 
 
 " Use CTRL-S for saving, also in Insert mode
@@ -64,3 +63,4 @@ inoremap <C-S>		<C-O>:update<CR>
 " map <Space>/ :vsc ReSharper.ReSharper_LineComment<CR>
 " map ] :vsc ReSharper.ReSharper_GotoNextMethod<CR>
 " map [ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
+
