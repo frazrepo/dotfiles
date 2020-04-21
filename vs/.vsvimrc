@@ -3,6 +3,7 @@ set clipboard=unnamed
 " https://github.com/keithn/vsvimguide
 " Raccourcis clavier Visual Studio
 "https://docs.microsoft.com/fr-fr/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019
+" https://github.com/VsVim/VsVim/blob/master/Documentation/Supported%20Features.md
 
 " vsc commands
 map <Space>qk :vsc Tools.CustomizeKeyboard<CR>
@@ -31,14 +32,27 @@ map H ^
 map L $ 
 map ² .
 inoremap jk <Esc>
+
 nnoremap c* *Ncgn
 nnoremap Y y$
 
+" Repeat . command in visual mode
+vnoremap . :normal.<CR>
+
+" Keep selection in select mode after shifting
+" Indenting not working when the line starts with ##
+vnoremap > >gv
+vnoremap < <gv
+
+" Backspace to navigate to alternate buffer
+nnoremap <bs> <c-^>
 
 " Use CTRL-S for saving, also in Insert mode
-noremap <C-S>		:update<CR>
-vnoremap <C-S>		<C-C>:update<CR>
-inoremap <C-S>		<C-O>:update<CR>
+nmap <space>w :w<cr>
+noremap <C-S>		:w<CR>
+vnoremap <C-S>		<C-C>:w<CR>
+inoremap <C-S>		<C-O>:w<CR>
+
 
 " Resharper
 " map gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
