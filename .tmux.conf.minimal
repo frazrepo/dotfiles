@@ -45,6 +45,9 @@ bind -n C-l send-keys C-l \; run 'sleep 0.1' \; clear-history
 set -g monitor-activity on
 set -g visual-activity off
 
+# vi mode
+set -g mode-keys vi
+
 
 # -- navigation ----------------------------------------------------------------
 
