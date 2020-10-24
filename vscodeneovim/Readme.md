@@ -3,3 +3,25 @@
 
 # Requirements
 * whichkey extension in vscode
+
+# Whichkey keybindings
+```
+leader = , 
+```
+
+
+## Buffers
+
+```
+<leader>bb         : Show all bufffers
+<leader>bd         : Close Active Editor
+<leader>bm         : Close Other Editors
+<leader>bh/j/k/l   : Move editor to left/below/above/right
+<leader>bn/p       : Next/Previous editor
+<leader>N          : New editor
+<leader>u          : Reopen close editor
+<leader>y          : Copy buffer to clipboard
+
+```
+
+
