@@ -39,10 +39,6 @@ if exists('g:vscode')
     map µ # 
     map ² . 
 
-    " Move faster vertically (paragraph motion)
-    map <c-j> }
-    map <c-k> {
-
     " Change word under cursor and dot repeat, really useful to edit quickly
     nnoremap c* *Ncgn
     nnoremap c# #NcgN
