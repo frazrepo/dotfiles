@@ -23,5 +23,15 @@ leader = ,
 <leader>y          : Copy buffer to clipboard
 
 ```
+## Explorer
+```
+<leader>e          : Toggle Explorer
+```
 
+## Terminal
+
+```
+<leader>tt         : Toggle Terminal
+<leader>tT         : Focus Terminal
+```
 
