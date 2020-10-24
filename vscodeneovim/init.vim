@@ -1,7 +1,5 @@
 if exists('g:vscode')
-    " Default to system clipboard
-    set clipboard^=unnamed,unnamedplus 
-
+    set clipboard^=unnamed,unnamedplus " Default to system clipboard
     " Space as a Leader key
     let mapleader = "\<Space>" 
 
@@ -21,9 +19,6 @@ if exists('g:vscode')
     "Paste quickly in insert mode
     inoremap <C-r><C-r> <C-r>*
 
-
-    map <c-j> }
-    map <c-k> {
 
     " Repeat . command in visual mode
     vnoremap . :normal.<CR>
@@ -84,19 +79,71 @@ if exists('g:vscode')
     onoremap aa :<C-u>normal va><CR>
 
 
+
+
+
+    function! s:openVSCodeCommandsInVisualMode()
+        normal! gv
+        let visualmode = visualmode()
+        if visualmode == "V"
+            let startLine = line("v")
+            let endLine = line(".")
+            call VSCodeNotifyRange("workbench.action.showCommands", startLine, endLine, 1)
+        else
+            let startPos = getpos("v")
+            let endPos = getpos(".")
+            call VSCodeNotifyRangePos("workbench.action.showCommands", startPos[1], endPos[1], startPos[2], endPos[2], 1)
+        endif
+    endfunction
+
+    function! s:openWhichKeyInVisualMode()
+        normal! gv
+        let visualmode = visualmode()
+        if visualmode == "V"
+            let startLine = line("v")
+            let endLine = line(".")
+            call VSCodeNotifyRange("whichkey.show", startLine, endLine, 1)
+        else
+            let startPos = getpos("v")
+            let endPos = getpos(".")
+            call VSCodeNotifyRangePos("whichkey.show", startPos[1], endPos[1], startPos[2], endPos[2], 1)
+        endif
+    endfunction
+
+
+    command! -complete=file -nargs=? Split call <SID>split('h', <q-args>)
+    command! -complete=file -nargs=? Vsplit call <SID>split('v', <q-args>)
+    command! -complete=file -nargs=? New call <SID>split('h', '__vscode_new__')
+    command! -complete=file -nargs=? Vnew call <SID>split('v', '__vscode_new__')
+    command! -bang Only if <q-bang> == '!' | call <SID>closeOtherEditors() | else | call VSCodeNotify('workbench.action.joinAllGroups') | endif
+
+
+    " Better Navigation
+    nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
+    xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
+    nnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.navigateUp')<CR>
+    xnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.navigateUp')<CR>
+    nnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
+    xnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
+    nnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
+    xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
+
+    " whichkey , need whichkey extension in vscode
+    nnoremap <silent> , :call VSCodeNotify('whichkey.show')<CR>
+    xnoremap <silent> , :<C-u>call <SID>openWhichKeyInVisualMode()<CR>
+
     "Commentary
-	xmap gc  <Plug>VSCodeCommentary
-	nmap gc  <Plug>VSCodeCommentary
-	omap gc  <Plug>VSCodeCommentary
-	nmap gcc <Plug>VSCodeCommentaryLine
+    xmap gc  <Plug>VSCodeCommentary
+    nmap gc  <Plug>VSCodeCommentary
+    omap gc  <Plug>VSCodeCommentary
+    nmap gcc <Plug>VSCodeCommentaryLine
 
     " plugin via vim-plug
     call plug#begin()
-        Plug 'tpope/vim-surround'
-        Plug 'wellle/targets.vim'
-        Plug 'tommcdo/vim-exchange'
-        Plug 'vim-scripts/ReplaceWithRegister'
-        Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-surround'
+    Plug 'wellle/targets.vim'
+    Plug 'tommcdo/vim-exchange'
+    Plug 'vim-scripts/ReplaceWithRegister'
+    Plug 'tpope/vim-abolish'
     call plug#end()
-
 endif
