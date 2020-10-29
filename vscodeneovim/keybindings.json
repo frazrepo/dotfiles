@@ -112,11 +112,6 @@
     },
     {
         "key": "tab",
-        "command": "selectNextSuggestion",
-        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    },
-    {
-        "key": "tab",
         "command": "workbench.action.quickOpenNavigateNext",
         "when": "inQuickOpen"
     },
@@ -232,11 +227,6 @@
     {
         "key": "ctrl+j",
         "command": "-workbench.action.togglePanel"
-    },
-    {
-        "key": "shift+k",
-        "command": "editor.action.showHover",
-        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+k ctrl+i",
