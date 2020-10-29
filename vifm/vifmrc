@@ -1,0 +1,7 @@
+" Mappings
+nnoremap I cw<c-a>
+nnoremap cc cw<c-u>
+nnoremap A cw
+nnoremap <F2> cw
+nnoremap <space>  tj
+nnoremap <space>a :%sel<cr>
