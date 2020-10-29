@@ -1,6 +1,6 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    // Enable jj and jk for ESC
+     // Enable jj and jk for ESC	
     {
         "key": "j",
         "command": "vscode-neovim.compositeEscape1",
@@ -14,36 +14,6 @@
         "args" : "k"
     },
     {
-        "key": "shift+alt+down",
-        "command": "editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+alt+down",
-        "command": "-editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+alt+up",
-        "command": "editor.action.copyLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+alt+up",
-        "command": "-editor.action.copyLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+alt+f",
-        "command": "editor.action.formatDocument",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+i",
-        "command": "-editor.action.formatDocument",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
         "key": "alt+left",
         "command": "workbench.action.navigateBack"
     },
@@ -52,28 +22,12 @@
         "command": "workbench.action.navigateForward"
     },
     {
-        "key": "ctrl+shift+6",
-        "command": "-workbench.action.navigateForward"
-    },
-    {
         "key": "ctrl+shift+o",
         "command": "open-in-vim.open"
     },
     {
-        "key": "shift+ctrl+e",
-        "command": "actions.findWithSelection"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "-actions.findWithSelection"
-    },
-    {
         "key": "ctrl+e",
         "command": "workbench.view.explorer"
-    },
-    {
-        "key": "shift+ctrl+e",
-        "command": "-workbench.view.explorer"
     },
     {
         "key": "r",
@@ -117,11 +71,6 @@
     },
     {
         "key": "shit+tab",
-        "command": "selectPrevSuggestion",
-        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    },
-    {
-        "key": "shift+tab",
         "command": "selectPrevSuggestion",
         "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
     },
@@ -234,11 +183,6 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "shift+tab",
-        "command": "-acceptAlternativeSelectedSuggestion",
-        "when": "suggestWidgetVisible && textInputFocus && textInputFocus"
-    },
-    {
         "key": "ctrl+f",
         "command": "-vscode-neovim.ctrl-f",
         "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
@@ -249,4 +193,3 @@
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
     }
 ]
-
