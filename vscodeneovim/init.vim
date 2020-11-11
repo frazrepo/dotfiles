@@ -1,5 +1,5 @@
 if exists('g:vscode')
-	set clipboard^=unnamed,unnamedplus " Default to system clipboard
+	set clipboard=unnamedplus " Default to system clipboard
 	" Space as a Leader key
 	let mapleader = "\<Space>" 
 
@@ -46,10 +46,6 @@ if exists('g:vscode')
 	"Map some keys for azerty keyboard
 	map µ # 
 	map ² . 
-
-	" Move faster vertically (paragraph motion)
-	map <c-j> }
-	map <c-k> {
 
 	" Change word under cursor and dot repeat, really useful to edit quickly
 	nnoremap c* *Ncgn
