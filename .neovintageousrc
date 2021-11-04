@@ -2,6 +2,9 @@
 " SublimeText vim emulator
 " Activate ctrl key in sublime text settings
 " Preferences/Settings : "vintageous_use_ctrl_keys": true,
+"    "vintageous_handle_keys": {
+"             "<C-f>": false
+"    }
 " Version > 1.16 (26/03/2019)
 
 let mapleader=<space>
@@ -10,11 +13,6 @@ let mapleader=<space>
 nnoremap H ^
 nnoremap L $
 nnoremap µ # 
-
-" Not working 
-nnoremap ² . 
-nnoremap mù m`
-nnoremap ùù ``
 
 " Copy /Paste
 nnoremap <leader>y "+y
@@ -27,11 +25,11 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 
 "Visual mode"
-vnoremap ,p "0p
-nnoremap ,p "0p
 vnoremap <lt> <lt>gv
 vnoremap > >gv
 
 " Miscellaneous"
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>r :reg<CR>
+noremap <C-s> :w<CR>
+
