@@ -1,10 +1,15 @@
 " Type :h neovintageousrc for help.
 " SublimeText vim emulator
 " Activate ctrl key in sublime text settings
-" Preferences/Settings : "vintageous_use_ctrl_keys": true,
+" Preferences/Settings
+"    "vintageous_use_ctrl_keys": true,
 "    "vintageous_handle_keys": {
-"             "<C-f>": false
-"    }
+"             "<C-f>": false,
+"             "<C-n>": false
+"    },
+"    "vintageous_use_sys_clipboard" : true,
+"    "vintageous_i_escape_jk" : true
+"
 " Version > 1.16 (26/03/2019)
 
 let mapleader=<space>
@@ -15,21 +20,16 @@ nnoremap L $
 nnoremap µ # 
 
 " Copy /Paste
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
-nnoremap <leader>Y "+Y
 nnoremap Y y$ 
 
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-
-"Visual mode"
+"Visual mode
 vnoremap <lt> <lt>gv
 vnoremap > >gv
 
-" Miscellaneous"
+" Miscellaneous
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>r :reg<CR>
 noremap <C-s> :w<CR>
+
+noremap <leader><space> :nohlsearch<CR>
 
