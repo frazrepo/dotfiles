@@ -1,0 +1,24 @@
+window:
+  title: Alacritty
+  dimensions:
+    columns: 150
+    lines: 40
+
+font:
+  normal:
+    family: 'FiraCode Nerd Font Mono'
+ 
+background_opacity: 0.95
+
+selection:
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+  
+# Updating to PowerShell 7 (added to my PATH variable as pwsh)
+shell:
+  program: pwsh
+
+# Paste text with right click, instead of the default middle mouse wheel
+# click
+mouse_bindings:
+  - { mouse: Right, action: PasteSelection }
