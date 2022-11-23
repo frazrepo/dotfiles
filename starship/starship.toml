@@ -1,0 +1,15 @@
+# This will remove the "via 🐹"
+[package]
+disabled = true
+
+# This removes the "via ☕ v11.0.11" Java version info
+[java]
+disabled = true
+
+# Set disable = false to show hostname
+[hostname]
+ssh_only = false
+format = "[$hostname]($style) "
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
