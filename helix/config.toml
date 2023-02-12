@@ -5,13 +5,25 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.file-picker]
+hidden = false
+
+[editor]
+line-number = "relative"
+mouse = false
+
 [keys.normal]
 H="goto_line_start"
 L="goto_line_end"
-C-s = ":w" # Maps the Control-s to the typable command :w which is an alias for :write (save file)
-"ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
+
+# Maps the Control-s to the typable command :w which is an alias for :write (save file)
+C-s = ":w"
+
+# Maps the enter key to open_below then re-enter normal mode
+"ret" = ["open_below", "normal_mode"]
 
 # line-up
 "A-up" = ["keep_primary_selection","extend_line","yank","move_line_up","open_above","normal_mode","replace_with_yanked", "move_line_down", "move_line_down", "extend_line", "delete_selection", "move_line_up", "move_line_up"]
+
 # line-down
 "A-down" = ["keep_primary_selection","extend_line","delete_selection", "paste_after", "move_line_down"]
