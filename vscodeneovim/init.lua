@@ -80,9 +80,9 @@ if vim.g.vscode then
             " -------------------
             " ie ae
             xnoremap ie GoggV
-            onoremap ie :<C-u>normal vie<CR>
+            onoremap ie :<C-u>normal mzvie<CR>`z<CR>
             xnoremap ae GoggV
-            onoremap ae :<C-u>normal vae<CR>
+            onoremap ae :<C-u>normal mzvae<CR>`z<CR>
 
             " Line text-object
             " -----------------
