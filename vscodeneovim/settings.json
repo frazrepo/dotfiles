@@ -3,6 +3,10 @@
     "vscode-neovim.neovimExecutablePaths.linux": "nvim",
     "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/vscodeneovim/init.lua",
     
+    // windows (warning full path only)
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Tools\\Neovim\\nvim-win64\\bin\\nvim.exe",
+    "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\UserName\\AppData\\Local\\vscodeneovim\\init.lua",
+    
     // performance
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
