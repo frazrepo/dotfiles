@@ -116,6 +116,12 @@ if vim.g.vscode then
     map('x', 'gc', '<Plug>VSCodeCommentary'  , {noremap =false, silent = true})
     map('o', 'gc', '<Plug>VSCodeCommentary'  , {noremap =false, silent = true})
     map('n', 'gcc', '<Plug>VSCodeCommentaryLine'  , {noremap =false, silent = true})
+     
+    -- Undo state between vscode and nviml workaround
+    -- https://github.com/vscode-neovim/vscode-neovim/issues/1139 
+    map('n', 'u', [[:call VSCodeNotify('undo')<CR>]] , {noremap =false, silent = true})
+    map('n', '<C-r>', [[:call VSCodeNotify('redo')<CR>]] , {noremap =false, silent = true})
+    
     
     --################################################
     -- Text-Objects
