@@ -4,6 +4,17 @@
 # Requirements
 * whichkey extension in vscode
 
+# Settings VSCode
+
+For performance optimization, put these lines in vscode settings : 
+
+```json
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+
+```
+
 # Whichkey keybindings
 ```
 leader = , 
