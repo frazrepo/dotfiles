@@ -1,7 +1,46 @@
 // Place your key bindings in this file to overwrite the defaults
 [
+    // Open in gvim
     {
         "key": "ctrl+shift+o",
         "command": "open-in-vim.open"
+    },
+    // Navigate Panes
+    {
+        "key": "alt+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.navigateDown"
+    },
+    // Toggle terminal
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    // Max terminal
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    },
+    // Toggle sidebar
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.focusSideBar",
+        "when": "!sideBarFocus"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
     },
 ]
