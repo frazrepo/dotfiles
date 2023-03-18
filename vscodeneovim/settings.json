@@ -2,5 +2,11 @@
     // macos
     "vscode-neovim.neovimExecutablePaths.linux": "nvim",
     "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/vscodeneovim/init.lua",
+    
+    // performance
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+
 }
 
