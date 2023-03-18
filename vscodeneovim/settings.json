@@ -1,20 +1,5 @@
 {
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    "git.enableSmartCommit": true,
-    "editor.minimap.enabled": false,
-    "extensions.ignoreRecommendations": false,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
-    "open-in-vim.openMethod": "gvim",
-    "files.autoSave": "afterDelay",
-    "editor.fontSize": 20,
-    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Nord",
+    // macos
     "vscode-neovim.neovimExecutablePaths.linux": "nvim",
     "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/vscodeneovim/init.lua",
 }
