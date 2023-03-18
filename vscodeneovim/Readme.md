@@ -1,8 +1,8 @@
 # Extension link
 * [https://github.com/asvetliakov/vscode-neovim](https://github.com/asvetliakov/vscode-neovim)
 
-# lua ou vim
-Use lua. The vim configuration is deprecated
+# init.lua or init.vim
+Use init.lua. The init.vim configuration is deprecated
 
 
 # Settings VSCode
