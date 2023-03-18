@@ -24,6 +24,17 @@ if vim.g.vscode then
       end,
     }
 
+    local symbol = {
+      rename = function()
+        vim.fn.VSCodeNotify("editor.action.rename")
+      end,
+    }
+
+    local refactor = {
+        showMenu = function()
+            vim.fn.VSCodeNotify("editor.action.refactor")
+        end,
+    }
     -- https://vi.stackexchange.com/a/31887
     local nv_keymap = function(lhs, rhs)
       vim.api.nvim_set_keymap('n', lhs, rhs, { noremap = true, silent = true })
@@ -116,12 +127,11 @@ if vim.g.vscode then
     map('x', 'gc', '<Plug>VSCodeCommentary'  , {noremap =false, silent = true})
     map('o', 'gc', '<Plug>VSCodeCommentary'  , {noremap =false, silent = true})
     map('n', 'gcc', '<Plug>VSCodeCommentaryLine'  , {noremap =false, silent = true})
-     
+
     -- Undo state between vscode and nviml workaround
-    -- https://github.com/vscode-neovim/vscode-neovim/issues/1139 
+    -- https://github.com/vscode-neovim/vscode-neovim/issues/1139
     map('n', 'u', [[:call VSCodeNotify('undo')<CR>]] , {noremap =false, silent = true})
     map('n', '<C-r>', [[:call VSCodeNotify('redo')<CR>]] , {noremap =false, silent = true})
-    
     
     --################################################
     -- Text-Objects
@@ -157,6 +167,12 @@ if vim.g.vscode then
     map('x', 'aa','a>', default_opts)
     map('o', 'aa',':<C-u>normal va><CR>', default_opts)
 
+
+    --################################################
+    -- Refactor
+    --################################################
+    vim.keymap.set({ 'v'}, "<space>r", refactor.showMenu)
+    vim.keymap.set({ 'n'}, "<space>rr", symbol.rename)
 
     --################################################
     -- Autocommand
