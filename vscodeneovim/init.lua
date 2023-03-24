@@ -306,7 +306,7 @@ if vim.g.vscode then
         -- Helpers
         -----------------------------------------------------------
 
-        -- leap like next version of lightspeed
+        -- leap like next version of lightspeed  (Advantage : the label is on the third char)
         {
             'ggandor/leap.nvim',
             config = function()
@@ -314,22 +314,25 @@ if vim.g.vscode then
             end,
         },
 
-        -- -- lightspeed (Advantage : the label is on the third char)
-        -- {
-        --     'ggandor/lightspeed.nvim',
-        --     config = function()
-        --         require 'lightspeed'.setup {
-        --             labels = { "s", "f", "n", "j", "k", "l", "o", "i", "w", "e", "h", "g", "u", "t", "m", "v", "c", "a", "z" }
-        --         }
-        --
-        --         --disabling f F t T
-        --         vim.api.nvim_set_keymap("n", "f", "f", { silent = true })
-        --         vim.api.nvim_set_keymap("n", "F", "F", { silent = true })
-        --         vim.api.nvim_set_keymap("n", "t", "t", { silent = true })
-        --         vim.api.nvim_set_keymap("n", "T", "T", { silent = true })
-        --
-        --     end
-        -- },
+       -- Flit : easily jump to any location and enhanced f/t motions for Leap
+       -- Can jump on the next occurence with <CR>
+       {
+           "ggandor/flit.nvim",
+           dependencies ={ "ggandor/leap.nvim"},
+           event = "VeryLazy",
+           config = function(_, opts)
+              require('flit').setup {
+                 keys = { f = 'f', F = 'F', t = 't', T = 'T' },
+                 -- A string like "nv", "nvo", "o", etc.
+                 labeled_modes = "v",
+                 multiline = true,
+                 -- Like `leap`s similar argument (call-specific overrides).
+                 -- E.g.: opts = { equivalence_classes = {} }
+                 opts = {}
+               }
+           end,
+       }
+
      })
 else
     -- ordinary Neovim
