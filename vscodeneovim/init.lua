@@ -310,7 +310,14 @@ if vim.g.vscode then
         {
             'ggandor/leap.nvim',
             config = function()
-                require('leap').add_default_mappings()
+               -- require('leap').add_default_mappings()
+               vim.keymap.set({'n'}, 's', '<Plug>(leap-forward-to)')
+               vim.keymap.set({'n'}, 'S', '<Plug>(leap-backward-to)')
+               vim.keymap.set({'x', 'o'}, 'x', '<Plug>(leap-forward-till)')
+               vim.keymap.set({'x', 'o'}, 'X', '<Plug>(leap-backward-till)')
+               vim.keymap.set({'x', 'o'}, 'z', '<Plug>(leap-forward-to)')
+               vim.keymap.set({'x', 'o'}, 'Z', '<Plug>(leap-backward-to)')
+
             end,
         },
 
