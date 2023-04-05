@@ -1,4 +1,4 @@
-theme = "dracula"
+theme = "catppuccin_mocha"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -26,6 +26,8 @@ S = "surround_add"
 
 H = "goto_line_start"
 L = "goto_line_end"
+
+backspace = "goto_last_accessed_file"
 
  # Maps the enter key to open_below then re-enter normal mode
 "ret" = ["open_below", "normal_mode"]
