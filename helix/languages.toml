@@ -1,0 +1,9 @@
+[[language]]
+name = "bicep"
+scope = "source.bicep"
+file-types = ["bicep"]
+roots = []
+auto-format = true
+comment-token = "//"
+indent = { tab-width = 2, unit = " "}
+language-server = { command = "Bicep-LangServer" }
