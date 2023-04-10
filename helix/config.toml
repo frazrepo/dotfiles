@@ -17,16 +17,20 @@ C-j = "shrink_selection"
 C-k = "expand_selection"
 C-l = "select_next_sibling"
 
+# Vim stuff : personal preferences
+H = "goto_line_start"
+L = "goto_line_end"
+
 # Vim stuff
+0 = "goto_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
 V = ["select_mode", "extend_to_line_bounds"]
 D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection"]
 
 # Would be nice to be able to do something after this but it isn't chainable
 S = "surround_add" 
-
-H = "goto_line_start"
-L = "goto_line_end"
 
 backspace = "goto_last_accessed_file"
 
