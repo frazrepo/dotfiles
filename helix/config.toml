@@ -7,7 +7,8 @@ select = "underline"
 
 [keys.normal]
 # Quick iteration on config changes
-C-o = ":config-open"
+# conflict with C-o (jumplist out)
+# C-o = ":config-open"
 C-r = ":config-reload"
 
 # Some nice Helix stuff
