@@ -112,6 +112,7 @@ hidden = false
 
 [editor]
 mouse = true
+bufferline = "multiple"
 
 [editor.statusline]
 left = ["mode", "spinner","version-control"]
