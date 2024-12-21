@@ -156,7 +156,7 @@ config.keys = {
       mode = "SwapWithActive",
     }),
   },
-  -- Ctrl + Enter = Toggle Zoom
+  -- Ctrl + Enter / Option + Enter (mac) = Toggle Zoom
   {
     key = "\r",
     mods = "CTRL",
