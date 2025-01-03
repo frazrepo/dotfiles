@@ -21,8 +21,6 @@ local is_mac = is_found(wezterm.target_triple, 'apple')
 local act = wezterm.action
 
 -- Some empty tables for later use
-local keys = {}
-local mouse_bindings = {}
 local launch_menu = {}
 
 -- Menu items for Windows
@@ -36,6 +34,10 @@ if is_win then
         label = 'Powershell 7',
         args = {'pwsh.exe', '-NoLogo'}
     })
+    table.insert(launch_menu, {
+      label = 'CMD',
+      args = {'cmd.exe', '-NoLogo'}
+  })
 
     -- Enumerate any WSL distributions that are installed and add those to the menu
     local success, wsl_list, wsl_err = wezterm.run_child_process({"wsl.exe", "-l"})
@@ -142,7 +144,7 @@ config.unzoom_on_switch_pane = true
 arrow_solid = ""
 arrow_thin = ""
 icons = {
-  ["C:\\WINDOWS\\system32\\cmd.exe"] = wezterm.nerdfonts.md_console_line,
+  ["C:\\Windows\\system32\\cmd.exe"] = wezterm.nerdfonts.cod_terminal_cmd,
   ["bash"] = wezterm.nerdfonts.cod_terminal_bash,
   ["cargo"] = wezterm.nerdfonts.dev_rust,
   ["curl"] = wezterm.nerdfonts.mdi_flattr,
@@ -157,12 +159,13 @@ icons = {
   ["lua"] = wezterm.nerdfonts.seti_lua,
   ["node"] = wezterm.nerdfonts.mdi_hexagon,
   ["nvim"] = wezterm.nerdfonts.custom_vim,
-  ["pwsh.exe"] = wezterm.nerdfonts.md_console,
+  ["pwsh.exe"] = wezterm.nerdfonts.cod_terminal_powershell,
+  ["powershell.exe"] = wezterm.nerdfonts.cod_terminal,
   ["sudo"] = wezterm.nerdfonts.fa_hashtag,
   ["vim"] = wezterm.nerdfonts.dev_vim,
   ["wget"] = wezterm.nerdfonts.mdi_arrow_down_box,
   ["zsh"] = wezterm.nerdfonts.dev_terminal,
-  ["wslhost.exe"] = wezterm.nerdfonts.cod_terminal_bash,
+  ["wslhost.exe"] = wezterm.nerdfonts.cod_terminal_linux,
   ["lazygit"] = wezterm.nerdfonts.cod_github,
 }
 ---@param tab MuxTabObj
@@ -449,6 +452,22 @@ config.hyperlink_rules = {
   {
     regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?]],
     format = "https://www.github.com/$1/$3",
+  },
+}
+
+-- Mouse
+config.alternate_buffer_wheel_scroll_speed = 1
+config.bypass_mouse_reporting_modifiers = mod
+config.mouse_bindings = {
+  -- Don't open links without modifier
+  {
+    event = { Up = { streak = 1, button = "Left" } },
+    action = wezterm.action.CompleteSelection("ClipboardAndPrimarySelection"),
+  },
+  {
+    event = { Up = { streak = 1, button = "Left" } },
+    mods = mod,
+    action = wezterm.action.CompleteSelectionOrOpenLinkAtMouseCursor("ClipboardAndPrimarySelection"),
   },
 }
 
