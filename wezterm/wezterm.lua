@@ -147,8 +147,6 @@ icons = {
   ["cargo"] = wezterm.nerdfonts.dev_rust,
   ["curl"] = wezterm.nerdfonts.mdi_flattr,
   ["docker"] = wezterm.nerdfonts.linux_docker,
-  ["docker-compose"] = wezterm.nerdfonts.linux_docker,
-  ["fish"] = wezterm.nerdfonts.md_fish,
   ["gh"] = wezterm.nerdfonts.dev_github_badge,
   ["git"] = wezterm.nerdfonts.dev_git,
   ["go"] = wezterm.nerdfonts.seti_go,
@@ -159,13 +157,12 @@ icons = {
   ["lua"] = wezterm.nerdfonts.seti_lua,
   ["node"] = wezterm.nerdfonts.mdi_hexagon,
   ["nvim"] = wezterm.nerdfonts.custom_vim,
-  ["psql"] = wezterm.nerdfonts.dev_postgresql,
   ["pwsh.exe"] = wezterm.nerdfonts.md_console,
   ["sudo"] = wezterm.nerdfonts.fa_hashtag,
   ["vim"] = wezterm.nerdfonts.dev_vim,
   ["wget"] = wezterm.nerdfonts.mdi_arrow_down_box,
   ["zsh"] = wezterm.nerdfonts.dev_terminal,
-  ["wslhost.exe"] = wezterm.nerdfonts.dev_terminal,
+  ["wslhost.exe"] = wezterm.nerdfonts.cod_terminal_bash,
   ["lazygit"] = wezterm.nerdfonts.cod_github,
 }
 ---@param tab MuxTabObj
@@ -348,70 +345,71 @@ config.keys = {
 }
 
 -- Bar status
--- wezterm.on("update-status", function(window, pane)
---   -- Workspace name
---   local stat = window:active_workspace()
---   local stat_color = "#f7768e"
---   -- It's a little silly to have workspace name all the time
---   -- Utilize this to display LDR or current key table name
---   if window:active_key_table() then
---     stat = window:active_key_table()
---     stat_color = "#7dcfff"
---   end
---   if window:leader_is_active() then
---     stat = "LDR"
---     stat_color = "#bb9af7"
---   end
+wezterm.on("update-status", function(window, pane)
+  -- Workspace name
+  local stat = window:active_workspace()
+  local stat_color = "#f7768e"
+  -- It's a little silly to have workspace name all the time
+  -- Utilize this to display LDR or current key table name
+  if window:active_key_table() then
+    stat = window:active_key_table()
+    stat_color = "#7dcfff"
+  end
+  if window:leader_is_active() then
+    stat = "LDR"
+    stat_color = "#bb9af7"
+  end
 
---   local basename = function(s)
---     -- Nothing a little regex can't fix
---     return string.gsub(s, "(.*[/\\])(.*)", "%2")
---   end
+  local basename = function(s)
+    -- Nothing a little regex can't fix
+    return string.gsub(s, "(.*[/\\])(.*)", "%2")
+  end
 
---   -- Current working directory
---   local cwd = pane:get_current_working_dir()
---   if cwd then
---     if type(cwd) == "userdata" then
---       -- Wezterm introduced the URL object in 20240127-113634-bbcac864
---       cwd = basename(cwd.file_path)
---     else
---       -- 20230712-072601-f4abf8fd or earlier version
---       cwd = basename(cwd)
---     end
---   else
---     cwd = ""
---   end
+  -- Current working directory
+  local cwd = pane:get_current_working_dir()
+  if cwd then
+    if type(cwd) == "userdata" then
+      -- Wezterm introduced the URL object in 20240127-113634-bbcac864
+      cwd = basename(cwd.file_path)
+    else
+      -- 20230712-072601-f4abf8fd or earlier version
+      cwd = basename(cwd)
+    end
+  else
+    cwd = ""
+  end
 
-  -- -- Current command
-  -- local cmd = pane:get_foreground_process_name()
-  -- -- CWD and CMD could be nil (e.g. viewing log using Ctrl-Alt-l)
-  -- cmd = cmd and basename(cmd) or ""
+  -- Current command
+  local cmd = pane:get_foreground_process_name()
+  -- CWD and CMD could be nil (e.g. viewing log using Ctrl-Alt-l)
+  cmd = cmd and basename(cmd) or ""
 
-  -- -- Time
-  -- local time = wezterm.strftime("%H:%M")
+  -- Time
+  local time = wezterm.strftime("%H:%M")
 
-  -- -- Left status (left of the tab line)
-  -- window:set_left_status(wezterm.format({
-  --   { Foreground = { Color = stat_color } },
-  --   { Text = "  " },
-  --   { Text = wezterm.nerdfonts.oct_table .. "  " .. stat },
-  --   { Text = " |" },
-  -- }))
+  -- Left status (left of the tab line)
+  window:set_left_status(wezterm.format({
+    { Foreground = { Color = stat_color } },
+    { Text = "  " },
+    { Text = wezterm.nerdfonts.oct_table .. "  " .. stat },
+    -- { Text = " |" },
+    { Text = " " },
+  }))
 
---   -- Right status
---   window:set_right_status(wezterm.format({
---     -- Wezterm has a built-in nerd fonts
---     -- https://wezfurlong.org/wezterm/config/lua/wezterm/nerdfonts.html
---     { Text = wezterm.nerdfonts.md_folder .. "  " .. cwd },
---     { Text = " | " },
---     { Foreground = { Color = "#e0af68" } },
---     { Text = wezterm.nerdfonts.fa_code .. "  " .. cmd },
---     "ResetAttributes",
---     { Text = " | " },
---     { Text = wezterm.nerdfonts.md_clock .. "  " .. time },
---     { Text = "  " },
---   }))
--- end)
+  -- Right status
+  window:set_right_status(wezterm.format({
+    -- Wezterm has a built-in nerd fonts
+    -- https://wezfurlong.org/wezterm/config/lua/wezterm/nerdfonts.html
+    { Text = wezterm.nerdfonts.md_folder .. "  " .. cwd },
+    { Text = " | " },
+    { Foreground = { Color = "#e0af68" } },
+    { Text = wezterm.nerdfonts.fa_code .. "  " .. cmd },
+    "ResetAttributes",
+    { Text = " | " },
+    { Text = wezterm.nerdfonts.md_clock .. "  " .. time },
+    { Text = "  " },
+  }))
+end)
 
 -- Links
 config.hyperlink_rules = {
