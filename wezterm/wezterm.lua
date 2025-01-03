@@ -256,8 +256,8 @@ end)
 -- Command Palette
 ------------------------------------------------------------------
 config.command_palette_font_size = 13
-config.command_palette_bg_color = "#394b70"
-config.command_palette_fg_color = "#828bb8"
+config.command_palette_bg_color = "#00246B"
+config.command_palette_fg_color = "#CADCFC"
 
 ------------------------------------------------------------------
 -- Keybindings
@@ -344,8 +344,7 @@ config.keys = {
   { mods = mod, key = "f", action = act.Search("CurrentSelectionOrEmptyString") },
   { mods = mod, key = "v", action = act.PasteFrom("Clipboard") },
   { mods = mod, key = "u", action = act.CharSelect({ copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" }) },
-  -- Zoom and Command Palette
-  { mods = mod, key = "m", action = act.TogglePaneZoomState },
+  -- Command Palette
   { mods = mod, key = "p", action = act.ActivateCommandPalette },
   { mods = mod, key = "d", action = act.ShowDebugOverlay },
   -- Resize or Move and handle nvim keys
@@ -359,7 +358,7 @@ config.keys = {
   split_nav("move", "CTRL", "l", "Right"),
   { mods = "CTRL", key = "-", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
   { mods = "CTRL", key = "=", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-  { mods = "CTRL", key = "w", action = act.CloseCurrentPane({ confirm = true }) },
+  { mods = mod, key = "w", action = act.CloseCurrentPane({ confirm = true }) },
 	-- activate pane selection mode with the default alphabet (labels are "a", "s", "d", "f" and so on)
   { mods = "CTRL", key = "8", action = act.PaneSelect },
 	-- activate pane selection mode with numeric labels
