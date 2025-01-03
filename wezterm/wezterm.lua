@@ -317,9 +317,13 @@ end
 
 config.disable_default_key_bindings = true
 config.keys = {
-  -- Scrollback
-  { mods = mod, key = "k", action = act.ScrollByPage(-0.5) },
-  { mods = mod, key = "j", action = act.ScrollByPage(0.5) },
+  -- Clear screen and preserve scrollback (Send ctrl-l)
+   {mods = mod, key='K', action=wezterm.action_callback(function(window, pane)
+      local pos = pane:get_cursor_position()
+      local move_viewport_to_scrollback = string.rep('\r\n', pos.y)
+      pane:inject_output(move_viewport_to_scrollback)
+      pane:send_text('\x0c') -- CTRL-L
+    end)},
   -- New Tab
   { mods = mod, key = "t", action = act.SpawnTab("CurrentPaneDomain") },
   -- Splits
