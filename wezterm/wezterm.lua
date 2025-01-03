@@ -306,8 +306,8 @@ config.keys = {
   -- Splits
   { mods = mod, key = "Enter", action = smart_split },
   -- Resize Fonts
-  { mods = mod, key = "(", action = act.DecreaseFontSize },
-  { mods = mod, key = ")", action = act.IncreaseFontSize },
+  { mods = "CTRL", key = "(", action = act.DecreaseFontSize },
+  { mods = "CTRL", key = ")", action = act.IncreaseFontSize },
   -- Acivate Tabs
   { mods = mod, key = "l", action = act({ ActivateTabRelative = 1 }) },
   { mods = mod, key = "h", action = act({ ActivateTabRelative = -1 }) },
