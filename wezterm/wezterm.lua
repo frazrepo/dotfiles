@@ -91,7 +91,7 @@ config.font = wezterm.font_with_fallback(
     { family = "Iosevka Nerd Font", weight = "Medium"}
   }
 )
-config.font_size = 12
+config.font_size = 14
 if is_mac then
   config.font_size = 18 
 end
@@ -201,7 +201,7 @@ function title(tab, max_width)
     end
   end
   if is_zoomed then -- or (#tab.panes > 1 and not tab.is_active) then
-    title = " " .. title
+    title = wezterm.nerdfonts.cod_zoom_in .. title
   end
 
   title = wezterm.truncate_right(title, max_width - 3)
