@@ -85,6 +85,9 @@ config.font = wezterm.font_with_fallback(
   }
 )
 config.font_size = 12
+if is_mac then
+  config.font_size = 18 
+end
 
 -- Color
 -- config.color_scheme = 'Tokyo Night'
@@ -122,11 +125,11 @@ config.initial_rows = 32
 
 
 -- Cursor
+config.default_cursor_style = "BlinkingBar"
+config.force_reverse_video_cursor = true
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
-config.underline_thickness = 3
 config.cursor_thickness = 4
-config.underline_position = -6
 
 -- Tab bar
 config.use_fancy_tab_bar = false
@@ -240,7 +243,6 @@ config.command_palette_bg_color = "#394b70"
 config.command_palette_fg_color = "#828bb8"
 
 -- Keybinds for splitting panes
-
 mod = is_win and "SHIFT|CTRL" or "SHIFT|SUPER"
 
 smart_split = wezterm.action_callback(function(window, pane)
@@ -303,13 +305,9 @@ config.keys = {
   { mods = mod, key = "t", action = act.SpawnTab("CurrentPaneDomain") },
   -- Splits
   { mods = mod, key = "Enter", action = smart_split },
-  { mods = mod, key = "|", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-  { mods = mod, key = "_", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  -- Resize Fonts
   { mods = mod, key = "(", action = act.DecreaseFontSize },
   { mods = mod, key = ")", action = act.IncreaseFontSize },
-  -- Move Tabs
-  { mods = mod, key = ">", action = act.MoveTabRelative(1) },
-  { mods = mod, key = "<", action = act.MoveTabRelative(-1) },
   -- Acivate Tabs
   { mods = mod, key = "l", action = act({ ActivateTabRelative = 1 }) },
   { mods = mod, key = "h", action = act({ ActivateTabRelative = -1 }) },
@@ -322,15 +320,12 @@ config.keys = {
   { mods = mod, key = "X", action = act.ActivateCopyMode },
   { mods = mod, key = "f", action = act.Search("CurrentSelectionOrEmptyString") },
   { mods = mod, key = "v", action = act.PasteFrom("Clipboard") },
-  {
-    mods = mod,
-    key = "u",
-    action = act.CharSelect({ copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" }),
-  },
-  -- { mods = M.mod, key = "v", action = act.ShowDebugOverlay },
+  { mods = mod, key = "u", action = act.CharSelect({ copy_on_select = true, copy_to = "ClipboardAndPrimarySelection" }) },
+  -- Zoom and Command Palette
   { mods = mod, key = "m", action = act.TogglePaneZoomState },
   { mods = mod, key = "p", action = act.ActivateCommandPalette },
   { mods = mod, key = "d", action = act.ShowDebugOverlay },
+  -- Resize or Move and handle nvim keys
   split_nav("resize", "CTRL", "LeftArrow", "Right"),
   split_nav("resize", "CTRL", "RightArrow", "Left"),
   split_nav("resize", "CTRL", "UpArrow", "Up"),
@@ -338,66 +333,18 @@ config.keys = {
   split_nav("move", "CTRL", "h", "Left"),
   split_nav("move", "CTRL", "j", "Down"),
   split_nav("move", "CTRL", "k", "Up"),
-  split_nav("move", "CTRL", "l", "Right"),  
-	{
-		key = "-",
-		mods = "CTRL",
-		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "=",
-		mods = "CTRL",
-		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "w",
-		mods = "CTRL",
-		action = act.CloseCurrentPane({ confirm = true }),
-	},
-	{
-		key = "h",
-		mods = "CTRL",
-		action = act.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "l",
-		mods = "CTRL",
-		action = act.ActivatePaneDirection("Right"),
-	},
-	{
-		key = "k",
-		mods = "CTRL",
-		action = act.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "j",
-		mods = "CTRL",
-		action = act.ActivatePaneDirection("Down"),
-	},
+  split_nav("move", "CTRL", "l", "Right"),
+  { mods = "CTRL", key = "-", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { mods = "CTRL", key = "=", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { mods = "CTRL", key = "w", action = act.CloseCurrentPane({ confirm = true }) },
 	-- activate pane selection mode with the default alphabet (labels are "a", "s", "d", "f" and so on)
-	{ key = "8", mods = "CTRL", action = act.PaneSelect },
+  { mods = "CTRL", key = "8", action = act.PaneSelect },
 	-- activate pane selection mode with numeric labels
-	{
-		key = "9",
-		mods = "CTRL",
-		action = act.PaneSelect({
-			alphabet = "1234567890",
-		}),
-	},
+  { mods = "CTRL", key = "9", action = act.PaneSelect({ alphabet = "1234567890" }) },
 	-- show the pane selection mode, but have it swap the active and selected panes
-	{
-		key = "0",
-		mods = "CTRL",
-		action = act.PaneSelect({
-			mode = "SwapWithActive",
-		}),
-	},
+  { mods = "CTRL", key = "0", action = act.PaneSelect({ mode = "SwapWithActive" }) },
   -- Ctrl + Enter = Toggle Zoom
-	{
-		key = "\r",
-		mods = "CTRL",
-		action = act.TogglePaneZoomState,
-	},
+  { mods = "CTRL", key = "\r", action = act.TogglePaneZoomState },
 }
 
 -- Bar status
