@@ -6,7 +6,9 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
+------------------------------------------------------------------
 -- Helpers
+------------------------------------------------------------------
 local function is_found(str, pattern)
     return string.find(str, pattern) ~= nil
 end
@@ -74,12 +76,15 @@ if is_linux then
     })
 end
 
+------------------------------------------------------------------
 -- Settings
+------------------------------------------------------------------
 config.enable_wayland = true
 config.webgpu_power_preference = "HighPerformance"
 
-
+------------------------------------------------------------------
 -- Font
+------------------------------------------------------------------
 config.font = wezterm.font_with_fallback(
   { 
     { family = "JetBrains Mono"}, 
@@ -91,13 +96,18 @@ if is_mac then
   config.font_size = 18 
 end
 
+------------------------------------------------------------------
 -- Color
+------------------------------------------------------------------
 -- config.color_scheme = 'Tokyo Night'
 config.color_scheme = "Catppuccin Macchiato"
 config.colors = {
   indexed = { [241] = "#65bcff" },
 }
 
+------------------------------------------------------------------
+-- Menu and Windows
+------------------------------------------------------------------
 config.launch_menu = launch_menu
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
@@ -126,14 +136,19 @@ config.initial_cols = 128
 config.initial_rows = 32
 
 
+------------------------------------------------------------------
 -- Cursor
+------------------------------------------------------------------
 config.default_cursor_style = "BlinkingBar"
 config.force_reverse_video_cursor = true
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 config.cursor_thickness = 4
 
--- Tab bar
+
+------------------------------------------------------------------
+-- Tab Bar
+------------------------------------------------------------------
 config.use_fancy_tab_bar = false
 config.status_update_interval = 1000
 config.tab_bar_at_bottom = false
@@ -237,12 +252,16 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   return ret
 end)
 
+------------------------------------------------------------------
 -- Command Palette
+------------------------------------------------------------------
 config.command_palette_font_size = 13
 config.command_palette_bg_color = "#394b70"
 config.command_palette_fg_color = "#828bb8"
 
--- Keybinds for splitting panes
+------------------------------------------------------------------
+-- Keybindings
+------------------------------------------------------------------
 mod = is_win and "SHIFT|CTRL" or "SHIFT|SUPER"
 
 smart_split = wezterm.action_callback(function(window, pane)
@@ -347,7 +366,9 @@ config.keys = {
   { mods = "CTRL", key = "\r", action = act.TogglePaneZoomState },
 }
 
--- Bar status
+------------------------------------------------------------------
+-- Bar Status
+------------------------------------------------------------------
 wezterm.on("update-status", function(window, pane)
   -- Workspace name
   local stat = window:active_workspace()
@@ -414,7 +435,9 @@ wezterm.on("update-status", function(window, pane)
   }))
 end)
 
+------------------------------------------------------------------
 -- Links
+------------------------------------------------------------------
 config.hyperlink_rules = {
   -- Linkify things that look like URLs and the host has a TLD name.
   --
@@ -455,7 +478,9 @@ config.hyperlink_rules = {
   },
 }
 
+------------------------------------------------------------------
 -- Mouse
+------------------------------------------------------------------
 config.alternate_buffer_wheel_scroll_speed = 1
 config.bypass_mouse_reporting_modifiers = mod
 config.mouse_bindings = {
