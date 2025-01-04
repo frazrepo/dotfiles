@@ -101,6 +101,7 @@ end
 ------------------------------------------------------------------
 -- config.color_scheme = 'Tokyo Night'
 config.color_scheme = "Catppuccin Macchiato"
+-- config.color_scheme = 'Catppuccin Latte'
 config.colors = {
   indexed = { [241] = "#65bcff" },
 }
@@ -128,7 +129,6 @@ if is_win then
     gui:set_position((screen.width - width) / 2, (screen.height - height) / 2)
   end)
 else
-  config.term = "wezterm"
   config.window_decorations = "NONE"
 end
 
@@ -262,7 +262,8 @@ config.command_palette_fg_color = "#CADCFC"
 ------------------------------------------------------------------
 -- Keybindings
 ------------------------------------------------------------------
-mod = is_win and "SHIFT|CTRL" or "SHIFT|SUPER"
+mod = is_win and "SHIFT|CTRL" or "SHIFT|CTRL"
+
 
 smart_split = wezterm.action_callback(function(window, pane)
   local dim = pane:get_dimensions()
