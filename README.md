@@ -13,6 +13,7 @@ $ wget https://raw.githubusercontent.com/frazrepo/dotfiles/master/.tmux.conf && 
 
 ## neovim
 * Find instructions here https://github.com/frazrepo/nvim-config
+* For LazyVim Starter : find instructions here : https://github.com/frazrepo/lazyvim-starter
 
 ## zsh
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) or [prezto](https://github.com/sorin-ionescu/prezto)
