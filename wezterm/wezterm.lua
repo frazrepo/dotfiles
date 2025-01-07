@@ -240,8 +240,8 @@ wezterm.on(
     local foreground = '#808080'
 
     if tab.is_active then
-      background = '#7c59c9'
-      foreground = '#c0c0c0'
+      background = '#df1fed'
+      foreground = '#f5f5f5'
     elseif hover then
       background = '#3b3052'
       foreground = '#909090'
