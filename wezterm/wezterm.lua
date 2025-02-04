@@ -103,8 +103,16 @@ config.color_scheme = "Catppuccin Macchiato"
 -- config.color_scheme = 'Catppuccin Latte'
 config.colors = {
 	indexed = { [241] = "#65bcff" },
+    split = "#444444",
 }
 
+------------------------------------------------------------------
+-- Panes
+------------------------------------------------------------------
+config.inactive_pane_hsb = {
+    saturation = 0.9,
+    brightness = 0.4,
+}
 ------------------------------------------------------------------
 -- Menu and Windows
 ------------------------------------------------------------------
@@ -140,7 +148,7 @@ config.default_cursor_style = "BlinkingBar"
 config.force_reverse_video_cursor = true
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
-config.cursor_thickness = 4
+config.cursor_thickness = 1
 
 ------------------------------------------------------------------
 -- Tab Bar
@@ -278,7 +286,7 @@ wezterm.on(
 -- Command Palette
 ------------------------------------------------------------------
 config.command_palette_font_size = 11
-config.command_palette_bg_color = "#00246B"
+config.command_palette_bg_color = "#181926"
 config.command_palette_fg_color = "#CADCFC"
 
 ------------------------------------------------------------------
