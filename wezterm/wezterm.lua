@@ -81,7 +81,8 @@ end
 ------------------------------------------------------------------
 config.enable_wayland = true
 config.webgpu_power_preference = "HighPerformance"
-
+-- config.window_background_opacity = 0.9
+config.window_background_opacity = 1.0
 ------------------------------------------------------------------
 -- Font
 ------------------------------------------------------------------
@@ -89,7 +90,7 @@ config.font = wezterm.font_with_fallback({
 	{ family = "JetBrains Mono" },
 	{ family = "Iosevka Nerd Font", weight = "Medium" },
 })
-config.font_size = 14
+config.font_size = 12
 if is_mac then
 	config.font_size = 18
 end
@@ -204,6 +205,7 @@ icons = {
   ["pwsh.exe"] = wezterm.nerdfonts.md_console,
   ["powershell.exe"] = wezterm.nerdfonts.cod_terminal_powershell,
   ["wslhost.exe"] = wezterm.nerdfonts.cod_terminal_linux,
+  ["wsl"]         = wezterm.nerdfonts.cod_terminal_linux,
   ["ruby"] = wezterm.nerdfonts.cod_ruby,
   ["sudo"] = wezterm.nerdfonts.fa_hashtag,
   ["vim"] = wezterm.nerdfonts.dev_vim,
@@ -275,7 +277,7 @@ wezterm.on(
 ------------------------------------------------------------------
 -- Command Palette
 ------------------------------------------------------------------
-config.command_palette_font_size = 13
+config.command_palette_font_size = 11
 config.command_palette_bg_color = "#00246B"
 config.command_palette_fg_color = "#CADCFC"
 
@@ -293,49 +295,9 @@ smart_split = wezterm.action_callback(function(window, pane)
 	end
 end)
 
----@param resize_or_move "resize" | "move"
----@param mods string
----@param key string
----@param dir "Right" | "Left" | "Up" | "Down"
-function split_nav(resize_or_move, mods, key, dir)
-	local event = "SplitNav_" .. resize_or_move .. "_" .. dir
-	wezterm.on(event, function(win, pane)
-		if is_nvim(pane) then
-			-- pass the keys through to vim/nvim
-			win:perform_action({ SendKey = { key = key, mods = mods } }, pane)
-		else
-			if resize_or_move == "resize" then
-				win:perform_action({ AdjustPaneSize = { dir, 3 } }, pane)
-			else
-				local panes = pane:tab():panes_with_info()
-				local is_zoomed = false
-				for _, p in ipairs(panes) do
-					if p.is_zoomed then
-						is_zoomed = true
-					end
-				end
-				wezterm.log_info("is_zoomed: " .. tostring(is_zoomed))
-				if is_zoomed then
-					dir = dir == "Up" or dir == "Right" and "Next" or "Prev"
-					wezterm.log_info("dir: " .. dir)
-				end
-				win:perform_action({ ActivatePaneDirection = dir }, pane)
-				win:perform_action({ SetPaneZoomState = is_zoomed }, pane)
-			end
-		end
-	end)
-	return {
-		key = key,
-		mods = mods,
-		action = wezterm.action.EmitEvent(event),
-	}
-end
-
-function is_nvim(pane)
-	return pane:get_user_vars().IS_NVIM == "true" or pane:get_foreground_process_name():find("n?vim")
-end
-
-config.disable_default_key_bindings = true
+-- Keep some defaults to move between panes
+-- like Ctrl + Shift + Arrow to move between panes
+config.disable_default_key_bindings = false
 config.keys = {
 	-- Clear screen and preserve scrollback (Send ctrl-l)
 	{
@@ -352,10 +314,10 @@ config.keys = {
 	{ mods = mod, key = "t", action = act.SpawnTab("CurrentPaneDomain") },
 	-- Splits
 	{ mods = mod, key = "Enter", action = smart_split },
-	-- Resize Fonts
+	-- -- Resize Fonts
 	{ mods = "CTRL", key = "(", action = act.DecreaseFontSize },
 	{ mods = "CTRL", key = ")", action = act.IncreaseFontSize },
-	-- Acivate Tabs
+	-- Activate Tabs
 	{ mods = mod, key = "l", action = act({ ActivateTabRelative = 1 }) },
 	{ mods = mod, key = "h", action = act({ ActivateTabRelative = -1 }) },
 	{ mods = mod, key = "R", action = wezterm.action.RotatePanes("Clockwise") },
@@ -375,15 +337,7 @@ config.keys = {
 	-- Command Palette
 	{ mods = mod, key = "p", action = act.ActivateCommandPalette },
 	{ mods = mod, key = "d", action = act.ShowDebugOverlay },
-	-- Resize or Move and handle nvim keys
-	split_nav("resize", "CTRL", "LeftArrow", "Right"),
-	split_nav("resize", "CTRL", "RightArrow", "Left"),
-	split_nav("resize", "CTRL", "UpArrow", "Up"),
-	split_nav("resize", "CTRL", "DownArrow", "Down"),
-	split_nav("move", "CTRL", "h", "Left"),
-	split_nav("move", "CTRL", "j", "Down"),
-	split_nav("move", "CTRL", "k", "Up"),
-	split_nav("move", "CTRL", "l", "Right"),
+
 	{ mods = "CTRL", key = "-", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ mods = "CTRL", key = "=", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ mods = mod, key = "w", action = act.CloseCurrentPane({ confirm = true }) },
