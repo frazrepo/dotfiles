@@ -306,7 +306,12 @@ end)
 -- Keep some defaults to move between panes
 -- like Ctrl + Shift + Arrow to move between panes
 config.disable_default_key_bindings = false
+-- To enable option on mac
+config.send_composed_key_when_left_alt_is_pressed = true
+
 config.keys = {
+    -- Fix mac option key not working
+    { key='n', mods='OPT', action=act{SendString="~"} },
 	-- Clear screen and preserve scrollback (Send ctrl-l)
 	{
 		mods = mod,
